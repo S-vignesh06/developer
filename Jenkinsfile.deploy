@@ -1,22 +1,22 @@
 pipeline {
   agent any
   stages{
-      stage ('stage 1') {
+      stage ('INIT') {
         steps {
           bat 'terraform init'
         }
       }
-      stage ('stage 2') {
+      stage ('VALIDATE') {
         steps {
           bat 'terraform validate'
         }
       }
-      stage ('stage 3') {
+      stage ('PLAN') {
         steps {
           bat 'terraform plan'
         }
       }
-      stage ('stage 4') {
+      stage ('APPLY') {
         steps {
           bat 'terraform apply --auto-approve'
         }
