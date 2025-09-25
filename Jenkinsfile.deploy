@@ -1,0 +1,25 @@
+pipeline {
+  agent any
+  stages{
+      stage ('stage 1') {
+        steps {
+          bat 'terraform init'
+        }
+      }
+      stage ('stage 2') {
+        steps {
+          bat 'terraform validate'
+        }
+      }
+      stage ('stage 3') {
+        steps {
+          bat 'terraform plan'
+        }
+      }
+      stage ('stage 4') {
+        steps {
+          bat 'terraform apply --auto-approve'
+        }
+      }
+  }
+}
